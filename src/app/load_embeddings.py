@@ -44,7 +44,6 @@ def load(
                 bar_length=80, 
                 time_elapsed=time_elapsed)
 
-
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         prog = "load_embeddings.py",

@@ -23,7 +23,10 @@ class VectorDb:
         """
         chunked_document = self.text_splitter.create_documents([document])
         for index, chunk in enumerate(chunked_document):
-            self.collection.upsert(documents=chunk.page_content, ids=f"{filename}.{index}")
+            self.collection.upsert(
+                documents=chunk.page_content, 
+                ids=f"{filename}.{index}",
+                metadatas={"filename": filename})
 
 
     def retrieve_results(self, query: str, n_results: int = 10):
