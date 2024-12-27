@@ -1,4 +1,5 @@
 import requests, zipfile, io
+import vectordb
 
 def retrieve_dataset(url="https://docs.python.org/3.12/archives/python-3.12-docs-text.zip",
                      download_path=".",
@@ -14,5 +15,3 @@ def retrieve_dataset(url="https://docs.python.org/3.12/archives/python-3.12-docs
     r = requests.get(url)
     z = zipfile.ZipFile(io.BytesIO(r.content))
     z.extractall(dataset_path)
-
-
