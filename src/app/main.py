@@ -19,7 +19,7 @@ def main(vectordb_path: str):
         if question == "quit":
             break
 
-        results = vectordb.retrieve_results(query=question, n_results=10)
+        results = vectordb.retrieve_results(query=question, n_results=30)
 
         prompt = f"""
         DOCUMENTS:
